@@ -1,0 +1,2 @@
+# rename files, replacing "fgh" by "abc"
+for f in *; do mv "$f" "${f/fgh/abc}"; done

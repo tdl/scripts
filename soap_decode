@@ -1,0 +1,7 @@
+#!/bin/sh
+
+# Base64-decode a directory of soap XMLs, where the encoded data is in the XML between <in1></in1> tags
+for f in *.xml; do grep "<in1>" $f | cut -d">" -f2- | cut -d"<" -f1 | base64 -d > decoded-$f ; done
+
+# Note: optionally convert decoded data: (put this after the "base64")
+# ... | iconv -f UTF-16LE -t UTF-8 

@@ -1,0 +1,2 @@
+# Post soap-request XML to a service and save the results
+curl -d @$1 $2 > ${1/.xml/.out.xml}

@@ -1,0 +1,4 @@
+#!/bin/sh
+
+# Download from URL with HTTP basic auth, don't check SSL certificates
+wget --no-check-certificate --user=$2 --password=$3 $1

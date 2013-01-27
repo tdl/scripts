@@ -1,0 +1,4 @@
+#!/bin/sh
+
+# validate a resume against the HR-XML 2.4 schema
+xmllint --noout --schema http://ns.hr-xml.org/2_4/HR-XML-2_4/StandAlone/Resume.xsd < $1
