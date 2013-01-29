@@ -1,2 +1,2 @@
-# Post soap-request XML to a service and save the results
+# Post soap-request XML to a service, format and save the results
 curl -d @$1 $2 | xmllint --format - > ${1/.xml/.out.xml}
