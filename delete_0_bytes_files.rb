@@ -5,7 +5,7 @@
 # didn't want to install Cygwin.
 def delete_0_bytes_files(dir)
   count = 0
-  Dir.glob('**/*') do |f|
+  Dir.glob("#{dir}/**/*") do |f|
     next if File.directory?(f)
     begin
       if File.size(f) == 0
