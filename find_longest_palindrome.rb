@@ -41,7 +41,7 @@ def check_usage
   unless ARGV.length == 1
     puts <<-EOS 
       Prints out the longest palindrome in a string.
-      Usage: #{$0} <string>
+      Usage: #{File.basename($0)} <string>
     EOS
     exit 1  
   end
