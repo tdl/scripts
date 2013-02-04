@@ -1,0 +1,8 @@
+#!/bin/bash
+
+# time a whole bunch of soap requests using curl to the URL given as first argument.
+#
+# -w writes out the  statistics to STDOUT
+# -o writes the response (which would otherwise go to STDOUT) to the given file
+find *.xml | xargs -n 1 -I ARG curl -d @ARG -w "%{time_total}" -o ARG_out $1
+
