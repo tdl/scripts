@@ -1,0 +1,8 @@
+#!/bin/bash
+
+# Solaris doesn't have xargs ; nor does it have the option -print0 to find.
+# As we don't have xargs, we need to use find's -exec option. However, this way, not all found files are passed
+# to the exec in one go so we can't use "tar -cvf" as it would only tar the first file!
+# Workaround: create an empty tarfile first, find all files and add them one by one to the tar ; then gzip it all
+
+touch mystuff.tar && find . -name "*.log" -size +0 -mtime -7 -exec tar -uvf mystuff.tar {} \; && gzip mystuff.tar
