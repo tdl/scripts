@@ -1,0 +1,4 @@
+#!/bin/bash
+
+# zip all non-0-bytes logfiles updated in the last week
+find . -name "*.log" -size +0 -mtime -7 | xargs tar -czvf mystuff.tar.gz
