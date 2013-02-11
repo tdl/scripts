@@ -1,0 +1,2 @@
+# get queries from logfiles, then sort by descending frequency
+grep -o "Text:[\(.*\)]" *.log* | tr '[:upper:]' '[:lower:]' | sort | uniq -c | sort -rn > query_frequency.txt
