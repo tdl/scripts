@@ -1,0 +1,1 @@
+find . -ctime -7 -type f -name "*.txt" \! -path "*cache*" | xargs ls -lt
