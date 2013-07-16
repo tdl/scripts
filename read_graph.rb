@@ -20,7 +20,7 @@ print "Building modifications list..."
 deletions = Hash.new { |h,k| h[k] = [] }
 graph.each do |key, values|
   # caveat: don't use "<<" here! That would append the whole array as one element!
-  deletions[key] += values.select { |value| value < key }
+  deletions[key].concat(values.select { |value| value < key })
 end
 puts "done."
 
